@@ -1,0 +1,9 @@
+c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\bin\Debug\Monsters.exe.config
+c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\bin\Debug\Monsters.exe
+c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\bin\Debug\Monsters.pdb
+c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\obj\Debug\Monsters.csprojResolveAssemblyReference.cache
+c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\obj\Debug\Monsters.MonstersTable.resources
+c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\obj\Debug\Monsters.Properties.Resources.resources
+c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\obj\Debug\Monsters.csproj.GenerateResource.Cache
+c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\obj\Debug\Monsters.exe
+c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\obj\Debug\Monsters.pdb
