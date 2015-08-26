@@ -8,7 +8,6 @@ namespace Monsters.Models
 {
     class Zombie : Beast
     {
-        public string Zomb { get; set; }
-        public int EatenPeople { get; set; }
+        
     }
 }

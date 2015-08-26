@@ -13,5 +13,7 @@ namespace Monsters.Models
         public int Speed { get; set; }
         public string CountryLocation { get; set; }
         public string CityLocation { get; set; }
+        public string BeastType { get; set; }
+        public int BittenPeople { get; set; }
     }
 }

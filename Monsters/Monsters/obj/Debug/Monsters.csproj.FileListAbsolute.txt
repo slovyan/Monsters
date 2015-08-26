@@ -7,3 +7,12 @@ c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\obj\
 c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\obj\Debug\Monsters.csproj.GenerateResource.Cache
 c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\obj\Debug\Monsters.exe
 c:\users\денис\documents\visual studio 2013\Projects\Monsters\Monsters\obj\Debug\Monsters.pdb
+C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\bin\Debug\Monsters.exe.config
+C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.exe
+C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.pdb
+C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\bin\Debug\Monsters.exe
+C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\bin\Debug\Monsters.pdb
+C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.csprojResolveAssemblyReference.cache
+C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.MonstersTable.resources
+C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.Properties.Resources.resources
+C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.csproj.GenerateResource.Cache

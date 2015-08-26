@@ -30,8 +30,8 @@ namespace Monsters
                 Speed = 100,
                 CityLocation = "Kiev",
                 CountryLocation = "Ukraine",
-                EatenPeople = 0,
-                Zomb = "Zombie"
+                BittenPeople = 0,
+                BeastType = "Zombie"
             });
 
             MonstersFamily.Add(new Zombie()
@@ -41,8 +41,8 @@ namespace Monsters
                 Speed = 120,
                 CityLocation = "London",
                 CountryLocation = "England",
-                EatenPeople = 55,
-                Zomb = "Zombie"
+                BittenPeople = 55,
+                BeastType = "Zombie"
             });
 
             MonstersFamily.Add(new Zombie()
@@ -52,8 +52,8 @@ namespace Monsters
                 Speed = 80,
                 CityLocation = "Tokio",
                 CountryLocation = "Japan",
-                EatenPeople = 12,
-                Zomb = "Zombie"
+                BittenPeople = 12,
+                BeastType = "Zombie"
             });
 
             MonstersFamily.Add(new Zombie()
@@ -63,8 +63,8 @@ namespace Monsters
                 Speed = 150,
                 CityLocation = "Sydney ",
                 CountryLocation = "Australia",
-                EatenPeople = 80,
-                Zomb = "Zombie"
+                BittenPeople = 80,
+                BeastType = "Zombie"
             });
 
             MonstersFamily.Add(new Zombie()
@@ -74,8 +74,8 @@ namespace Monsters
                 Speed = 200,
                 CityLocation = "NewYork",
                 CountryLocation = "USA",
-                EatenPeople = 20,
-                Zomb = "Zombie"
+                BittenPeople = 20,
+                BeastType = "Zombie"
             });
 
             MonstersFamily.Add(new Vampire()
@@ -86,7 +86,7 @@ namespace Monsters
                 CityLocation = "Moscow",
                 CountryLocation = "Russia",
                 BittenPeople = 10,
-                Vamp = "Vampire"
+                BeastType = "Vampire"
             });
 
             MonstersFamily.Add(new Vampire()
@@ -97,7 +97,7 @@ namespace Monsters
                 CityLocation = "CapeTown",
                 CountryLocation = "Africa",
                 BittenPeople = 0,
-                Vamp = "Vampire"
+                BeastType = "Vampire"
             });
 
             MonstersFamily.Add(new Vampire()
@@ -108,7 +108,7 @@ namespace Monsters
                 CityLocation = "BuenosAires",
                 CountryLocation = "Argentina",
                 BittenPeople = 38,
-                Vamp = "Vampire"
+                BeastType = "Vampire"
             });
 
             MonstersFamily.Add(new Vampire()
@@ -119,7 +119,7 @@ namespace Monsters
                 CityLocation = "Pekin",
                 CountryLocation = "China",
                 BittenPeople = 95,
-                Vamp = "Vampire"
+                BeastType = "Vampire"
             });
 
             MonstersFamily.Add(new Vampire()
@@ -130,7 +130,7 @@ namespace Monsters
                 CityLocation = "Habana",
                 CountryLocation = "Cuba",
                 BittenPeople = 2,
-                Vamp = "Vampire"
+                BeastType = "Vampire"
             });
 
             dataGridView1.DataSource = MonstersFamily;
