@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace Monsters.Models
 {
+    public enum TypeOfBeast { 
+        Zombie,
+        Vampire
+    } 
     public enum RankTypes { 
         Junior,
         Capitan,
-        SuperBeast
+        SuperBeast,
+        None
     }
     class Beast
     {
@@ -18,7 +23,9 @@ namespace Monsters.Models
         public int Speed { get; set; }
         public string CountryLocation { get; set; }
         public string CityLocation { get; set; }
-        public string BeastType { get; set; }
+
+        protected TypeOfBeast Beasts;  
+        public virtual TypeOfBeast BeastType { get; set; }
         public int BittenPeople { get; set; }
 
         private RankTypes Rank;
@@ -26,15 +33,19 @@ namespace Monsters.Models
         {
             get
             {
-                if (BittenPeople >= 0 && BittenPeople <= 15)
+                if (BittenPeople < 0)
+                {
+                    Rank = RankTypes.None;
+                }
+                else if (BittenPeople >= 0 && BittenPeople <= 15)
                 {
                     Rank = RankTypes.Junior;
                 }
                 else if (BittenPeople >= 16 && BittenPeople <= 50)
                 {
                     Rank = RankTypes.Capitan;
-                }
-                else
+                }                
+                else 
                 {
                     Rank = RankTypes.SuperBeast;
                 }

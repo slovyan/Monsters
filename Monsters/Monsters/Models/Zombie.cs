@@ -8,6 +8,16 @@ namespace Monsters.Models
 {
     class Zombie : Beast
     {
-        
+        public override TypeOfBeast BeastType
+        {
+            get
+            {
+                return Beasts;
+            }
+            set 
+            {
+                Beasts = TypeOfBeast.Zombie; 
+            }
+        }        
     }
 }
