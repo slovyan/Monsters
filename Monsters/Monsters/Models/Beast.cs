@@ -20,15 +20,17 @@ namespace Monsters.Models
     {
         public int Number { get; set; }
         public string Name { get; set; }
-        public int Speed { get; set; }
+        public double Speed { get; set; }
         public string CountryLocation { get; set; }
         public string CityLocation { get; set; }
 
+
+        //wtf? we dont need this
         protected TypeOfBeast Beasts;  
-        public virtual TypeOfBeast BeastType { get; set; }
+        public virtual TypeOfBeast BeastType { get; set; } //we dont need "set" at all
         public int BittenPeople { get; set; }
 
-        private RankTypes Rank;
+        private RankTypes Rank; // privat field should be always be "rank" or "_rank"
         public RankTypes RankType
         {
             get

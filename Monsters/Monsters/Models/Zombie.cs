@@ -12,7 +12,7 @@ namespace Monsters.Models
         {
             get
             {
-                return Beasts;
+                return Beasts; // return TypeOfBeast.Zombie; 
             }
             set 
             {

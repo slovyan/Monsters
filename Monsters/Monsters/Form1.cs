@@ -13,7 +13,7 @@ namespace Monsters
 {
     public partial class MonstersTable : Form
     {
-        List<Beast> MonstersFamily;
+        List<Beast> MonstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
 
         public MonstersTable()
         {
