@@ -12,12 +12,8 @@ namespace Monsters.Models
         {
             get
             {
-                return Beasts;
-            }
-            set
-            {
-                Beasts = TypeOfBeast.Vampire;
-            }
+                return TypeOfBeast.Vampire;
+            }            
         }  
         
     }

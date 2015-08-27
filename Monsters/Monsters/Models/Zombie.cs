@@ -12,12 +12,8 @@ namespace Monsters.Models
         {
             get
             {
-                return Beasts; // return TypeOfBeast.Zombie; 
-            }
-            set 
-            {
-                Beasts = TypeOfBeast.Zombie; 
-            }
+                return TypeOfBeast.Zombie;  // return TypeOfBeast.Zombie; 
+            }            
         }        
     }
 }

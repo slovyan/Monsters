@@ -25,38 +25,42 @@ namespace Monsters.Models
         public string CityLocation { get; set; }
 
 
-        //wtf? we dont need this
-        protected TypeOfBeast Beasts;  
-        public virtual TypeOfBeast BeastType { get; set; } //we dont need "set" at all
+        public virtual TypeOfBeast BeastType {
+            get
+            { 
+                return BeastType;
+            }
+        } //we dont need "set" at all
+
         public int BittenPeople { get; set; }
 
-        private RankTypes Rank; // privat field should be always be "rank" or "_rank"
+        private RankTypes rank; // privat field should be always be "rank" or "_rank"
         public RankTypes RankType
         {
             get
             {
                 if (BittenPeople < 0)
                 {
-                    Rank = RankTypes.None;
+                    rank = RankTypes.None;
                 }
                 else if (BittenPeople >= 0 && BittenPeople <= 15)
                 {
-                    Rank = RankTypes.Junior;
+                    rank = RankTypes.Junior;
                 }
                 else if (BittenPeople >= 16 && BittenPeople <= 50)
                 {
-                    Rank = RankTypes.Capitan;
+                    rank = RankTypes.Capitan;
                 }                
                 else 
                 {
-                    Rank = RankTypes.SuperBeast;
+                    rank = RankTypes.SuperBeast;
                 }
 
-                return Rank;
+                return rank;
             }
             set
             {
-                Rank = value;
+                rank = value;
             }
         }
     }
