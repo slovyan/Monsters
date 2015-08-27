@@ -43,7 +43,7 @@ namespace Monsters.Models
             }
             set
             {
-                RankType = value;
+                Rank = value;
             }
         }
     }
