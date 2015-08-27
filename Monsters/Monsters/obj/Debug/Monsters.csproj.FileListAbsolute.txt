@@ -16,3 +16,12 @@ C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monste
 C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.MonstersTable.resources
 C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.Properties.Resources.resources
 C:\Users\Денис\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.csproj.GenerateResource.Cache
+F:\Users\DChekorskiy\Documents\GitHub\Monsters\Monsters\Monsters\bin\Debug\Monsters.exe.config
+F:\Users\DChekorskiy\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.exe
+F:\Users\DChekorskiy\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.pdb
+F:\Users\DChekorskiy\Documents\GitHub\Monsters\Monsters\Monsters\bin\Debug\Monsters.exe
+F:\Users\DChekorskiy\Documents\GitHub\Monsters\Monsters\Monsters\bin\Debug\Monsters.pdb
+F:\Users\DChekorskiy\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.csprojResolveAssemblyReference.cache
+F:\Users\DChekorskiy\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.MonstersTable.resources
+F:\Users\DChekorskiy\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.Properties.Resources.resources
+F:\Users\DChekorskiy\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.csproj.GenerateResource.Cache

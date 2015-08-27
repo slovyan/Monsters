@@ -21,27 +21,29 @@ namespace Monsters.Models
         public string BeastType { get; set; }
         public int BittenPeople { get; set; }
 
-        public RankTypes Rank
-        {
-            get 
-            {
-            if (BittenPeople >= 0 && BittenPeople <= 15)
-                {
-                     return Rank = RankTypes.Junior;
-                }
-            else if (BittenPeople >= 16 && BittenPeople <= 50)
-                {
-                     return Rank = RankTypes.Capitan;
-                }
-            else
-                {
-                     return Rank = RankTypes.SuperBeast;
-                }
-            }
-            set
-            { 
-                Rank = value; 
-            } 
-        }
+        //public RankTypes Rank
+        //{
+        //    get 
+        //    {
+        //    if (BittenPeople >= 0 && BittenPeople <= 15)
+        //        {
+        //             Rank = RankTypes.Junior;
+        //        }
+        //    else if (BittenPeople >= 16 && BittenPeople <= 50)
+        //        {
+        //             Rank = RankTypes.Capitan;
+        //        }
+        //    else
+        //        {
+        //             Rank = RankTypes.SuperBeast;
+        //        }
+
+        //    return Rank;
+        //    }
+        //    set
+        //    { 
+        //        Rank = value; 
+        //    } 
+        //}
     }
 }
