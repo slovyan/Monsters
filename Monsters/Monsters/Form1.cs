@@ -14,7 +14,7 @@ namespace Monsters
     public partial class MonstersTable : Form
     {
         BindingList<Beast> monstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
-       
+        public int RowIndex = 0;
         public MonstersTable()
         {
             InitializeComponent();
@@ -126,6 +126,14 @@ namespace Monsters
             dataGridView1.DataSource = monstersFamily;
 
 
+        }
+
+        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == System.Windows.Forms.MouseButtons.Left)
+            {
+                
+            }
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
