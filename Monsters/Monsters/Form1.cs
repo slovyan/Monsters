@@ -13,17 +13,17 @@ namespace Monsters
 {
     public partial class MonstersTable : Form
     {
-        List<Beast> MonstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
-
+        BindingList<Beast> monstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
+       
         public MonstersTable()
         {
             InitializeComponent();
-            MonstersFamily = new List<Beast>();
+            monstersFamily = new BindingList<Beast>();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            MonstersFamily.Add(new Zombie()
+            monstersFamily.Add(new Zombie()
             {
                 Number = 1,
                 Name = "Atomic",
@@ -33,7 +33,7 @@ namespace Monsters
                 BittenPeople = 0
             });
 
-            MonstersFamily.Add(new Zombie()
+            monstersFamily.Add(new Zombie()
             {
                 Number = 2,
                 Name = "King",
@@ -43,7 +43,7 @@ namespace Monsters
                 BittenPeople = 55
             });
 
-            MonstersFamily.Add(new Zombie()
+            monstersFamily.Add(new Zombie()
             {
                 Number = 3,
                 Name = "Shadow",
@@ -53,7 +53,7 @@ namespace Monsters
                 BittenPeople = 12
             });
 
-            MonstersFamily.Add(new Zombie()
+            monstersFamily.Add(new Zombie()
             {
                 Number = 4,
                 Name = "Giant",
@@ -63,7 +63,7 @@ namespace Monsters
                 BittenPeople = 80
             });
 
-            MonstersFamily.Add(new Zombie()
+            monstersFamily.Add(new Zombie()
             {
                 Number = 5,
                 Name = "Master",
@@ -73,7 +73,7 @@ namespace Monsters
                 BittenPeople = 20
             });
 
-            MonstersFamily.Add(new Vampire()
+            monstersFamily.Add(new Vampire()
             {
                 Number = 6,
                 Name = "Demon",
@@ -83,7 +83,7 @@ namespace Monsters
                 BittenPeople = 10
             });
 
-            MonstersFamily.Add(new Vampire()
+            monstersFamily.Add(new Vampire()
             {
                 Number = 7,
                 Name = "Harlot",
@@ -93,7 +93,7 @@ namespace Monsters
                 BittenPeople = 0
             });
 
-            MonstersFamily.Add(new Vampire()
+            monstersFamily.Add(new Vampire()
             {
                 Number = 8,
                 Name = "Concubine",
@@ -103,7 +103,7 @@ namespace Monsters
                 BittenPeople = 38
             });
 
-            MonstersFamily.Add(new Vampire()
+            monstersFamily.Add(new Vampire()
             {
                 Number = 9,
                 Name = "Tramp",
@@ -113,7 +113,7 @@ namespace Monsters
                 BittenPeople = 95
             });
 
-            MonstersFamily.Add(new Vampire()
+            monstersFamily.Add(new Vampire()
             {
                 Number = 10,
                 Name = "Vixen",
@@ -123,8 +123,20 @@ namespace Monsters
                 BittenPeople = 2
             });
 
-            dataGridView1.DataSource = MonstersFamily;
+            dataGridView1.DataSource = monstersFamily;
+
 
         }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+        }
+        
     }
 }
