@@ -130,7 +130,7 @@ namespace Monsters
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            dataGridView1.BeginEdit(false);
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
