@@ -19,7 +19,10 @@ namespace Monsters
         {
             InitializeComponent();
             monstersFamily = new BindingList<Beast>();
+            dataGridView1.ReadOnly = true;
         }
+
+        //public event DataGridViewCellMouseEventHandler CellMouseClick;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -124,18 +127,19 @@ namespace Monsters
             });
 
             dataGridView1.DataSource = monstersFamily;
-
-
+            //dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
         }
 
-        private void dataGridView1_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == System.Windows.Forms.MouseButtons.Left)
-            {
-                
-            }
-        }
+        //private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        //{
+        //    if (e.Button == MouseButtons.Left)
+        //    {
+        //        dataGridView1.ReadOnly = true;
+        //    }
 
+        //}
+
+                     
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView1.BeginEdit(false);
