@@ -14,17 +14,14 @@ namespace Monsters
     public partial class MonstersTable : Form
     {
         BindingList<Beast> monstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
-        public int RowIndex = 0;
+        
         public MonstersTable()
         {
             InitializeComponent();
             monstersFamily = new BindingList<Beast>();
-            dataGridView1.ReadOnly = true;
         }
 
-        //public event DataGridViewCellMouseEventHandler CellMouseClick;
-
-        private void Form1_Load(object sender, EventArgs e)
+       private void Form1_Load(object sender, EventArgs e)
         {
             monstersFamily.Add(new Zombie()
             {
@@ -127,21 +124,21 @@ namespace Monsters
             });
 
             dataGridView1.DataSource = monstersFamily;
-            //dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
+            dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
         }
 
-        //private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        //{
-        //    if (e.Button == MouseButtons.Left)
-        //    {
-        //        dataGridView1.ReadOnly = true;
-        //    }
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                dataGridView1.ReadOnly = true;
+            }
 
-        //}
-
-                     
+        }
+                             
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            dataGridView1.ReadOnly = false;
             dataGridView1.BeginEdit(false);
         }
 
