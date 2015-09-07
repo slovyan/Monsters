@@ -14,7 +14,8 @@ namespace Monsters
     public partial class MonstersTable : Form
     {
         BindingList<Beast> monstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
-        
+
+        Form2 addItemForm = new Form2();
         public MonstersTable()
         {
             InitializeComponent();
@@ -145,6 +146,13 @@ namespace Monsters
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+        }
+
+        
+        private void AddItem_Click(object sender, EventArgs e)
+        {
+            Form2 addItemForm = new Form2();
+            addItemForm.ShowDialog();
         }
         
     }

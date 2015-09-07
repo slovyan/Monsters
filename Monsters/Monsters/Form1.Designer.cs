@@ -33,6 +33,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddItem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -67,12 +68,23 @@
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 
+            // AddItem
+            // 
+            this.AddItem.Location = new System.Drawing.Point(12, 377);
+            this.AddItem.Name = "AddItem";
+            this.AddItem.Size = new System.Drawing.Size(164, 38);
+            this.AddItem.TabIndex = 1;
+            this.AddItem.Text = "Add Item";
+            this.AddItem.UseVisualStyleBackColor = true;
+            this.AddItem.Click += new System.EventHandler(this.AddItem_Click);
+            // 
             // MonstersTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 450);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.AddItem);
             this.Controls.Add(this.dataGridView1);
             this.Name = "MonstersTable";
             this.Text = "Table";
@@ -89,6 +101,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
+        private System.Windows.Forms.Button AddItem;
     }
 }
 
