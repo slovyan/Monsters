@@ -16,7 +16,7 @@ namespace Monsters.Models
         SuperBeast,
         None
     }
-    class Beast
+    public class Beast
     {
         public int Number { get; set; }
         public string Name { get; set; }

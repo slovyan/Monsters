@@ -13,7 +13,7 @@ namespace Monsters
 {
     public partial class MonstersTable : Form
     {
-        BindingList<Beast> monstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
+        public BindingList<Beast> monstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
 
         Form2 addItemForm = new Form2();
         public MonstersTable()

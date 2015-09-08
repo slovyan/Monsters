@@ -14,7 +14,7 @@ namespace Monsters
 {
     public partial class Form2 : Form
     {
-        BindingList<Beast> monstersFamily;
+        public BindingList<Beast> monstersFamily;
 
         public Form2()
         {
@@ -39,16 +39,42 @@ namespace Monsters
 
         private void Add_Click(object sender, EventArgs e)
         {
-
+            
             //a lot of exceptions here, you need to check inputed value before cast it. Int32.TryParce method may help you
-            monstersFamily.Add(new Beast()
+
+            int number;
+
+            bool result = Int32.TryParse(textBox1.Text, out number);
+            if (result == false)
             {
-                Number = Convert.ToInt32(textBox1.Text),
+                number = 0;
+            }
+
+            double speed;
+
+            bool result2 = Double.TryParse(textBox3.Text, out speed);
+            if (result2 == false)
+            {
+                speed = 0;
+            }
+
+            int bittenpeople;
+
+            bool result3 = Int32.TryParse(textBox7.Text, out bittenpeople);
+            if (result3 == false)
+            {
+                bittenpeople = 0;
+            }
+
+            MonstersTable addForm = new MonstersTable();
+            addForm.monstersFamily.Add(new Beast()
+            {
+                Number = number,
                 Name = textBox2.Text,
-                Speed = Convert.ToDouble(textBox3.Text),
+                Speed = speed,
                 CityLocation = textBox6.Text,
                 CountryLocation = textBox4.Text,
-                BittenPeople = Convert.ToInt32(textBox7.Text)
+                BittenPeople = bittenpeople
             });
         }
         
