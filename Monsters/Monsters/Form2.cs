@@ -19,13 +19,17 @@ namespace Monsters
         public Form2()
         {
             InitializeComponent();            
-            monstersFamily = new BindingList<Beast>();
+            //monstersFamily = new BindingList<Beast>();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.Add(new Zombie());
-            comboBox1.Items.Add(new Vampire());
+            //not a good idea
+            //comboBox1.Items.Add(new Zombie());
+            //comboBox1.Items.Add(new Vampire());
+
+            comboBox1.Items.Add("Zombie");
+            comboBox1.Items.Add("Vampire");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,6 +39,8 @@ namespace Monsters
 
         private void Add_Click(object sender, EventArgs e)
         {
+
+            //a lot of exceptions here, you need to check inputed value before cast it. Int32.TryParce method may help you
             monstersFamily.Add(new Beast()
             {
                 Number = Convert.ToInt32(textBox1.Text),

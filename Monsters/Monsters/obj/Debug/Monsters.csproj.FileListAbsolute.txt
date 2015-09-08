@@ -35,3 +35,4 @@ C:\Users\litvi_000\Documents\GitHub\m2\Monsters\Monsters\Monsters\obj\Debug\Mons
 C:\Users\litvi_000\Documents\GitHub\m2\Monsters\Monsters\Monsters\obj\Debug\Monsters.Properties.Resources.resources
 C:\Users\litvi_000\Documents\GitHub\m2\Monsters\Monsters\Monsters\obj\Debug\Monsters.csproj.GenerateResource.Cache
 F:\Users\DChekorskiy\Documents\GitHub\Monsters\Monsters\Monsters\obj\Debug\Monsters.Form2.resources
+C:\Users\litvi_000\Documents\GitHub\m2\Monsters\Monsters\Monsters\obj\Debug\Monsters.Form2.resources
