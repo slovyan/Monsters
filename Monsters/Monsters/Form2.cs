@@ -42,40 +42,30 @@ namespace Monsters
             
             //a lot of exceptions here, you need to check inputed value before cast it. Int32.TryParce method may help you
 
-            int number;
+            int number = 0;
+            Int32.TryParse(textBox1.Text, out number);
+            
+            double speed = 0;
+            Double.TryParse(textBox3.Text, out speed);            
 
-            bool result = Int32.TryParse(textBox1.Text, out number);
-            if (result == false)
+            int bittenpeople = 0;
+            Int32.TryParse(textBox7.Text, out bittenpeople);
+
+            MonstersTable addForm = this.Owner as MonstersTable;
+            if (addForm != null)
             {
-                number = 0;
+                addForm.monstersFamily.Add(new Beast()
+                {
+                    Number = number,
+                    Name = textBox2.Text,
+                    Speed = speed,
+                    CityLocation = textBox6.Text,
+                    CountryLocation = textBox4.Text,
+                    BittenPeople = bittenpeople
+
+                });
             }
-
-            double speed;
-
-            bool result2 = Double.TryParse(textBox3.Text, out speed);
-            if (result2 == false)
-            {
-                speed = 0;
-            }
-
-            int bittenpeople;
-
-            bool result3 = Int32.TryParse(textBox7.Text, out bittenpeople);
-            if (result3 == false)
-            {
-                bittenpeople = 0;
-            }
-
-            MonstersTable addForm = new MonstersTable();
-            addForm.monstersFamily.Add(new Beast()
-            {
-                Number = number,
-                Name = textBox2.Text,
-                Speed = speed,
-                CityLocation = textBox6.Text,
-                CountryLocation = textBox4.Text,
-                BittenPeople = bittenpeople
-            });
+            
         }
         
     }

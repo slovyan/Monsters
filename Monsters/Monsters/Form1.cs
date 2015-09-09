@@ -152,6 +152,7 @@ namespace Monsters
         private void AddItem_Click(object sender, EventArgs e)
         {
             Form2 addItemForm = new Form2();
+            addItemForm.Owner = this;
             addItemForm.ShowDialog();
         }
         
