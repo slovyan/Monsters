@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace Monsters.Models
 {
     public enum TypeOfBeast { 
-        Zombie,
-        Vampire
+        Zombie = 0,
+        Vampire = 1,
     } 
     public enum RankTypes { 
         Junior,
@@ -24,12 +24,13 @@ namespace Monsters.Models
         public string CountryLocation { get; set; }
         public string CityLocation { get; set; }
 
-
+        private TypeOfBeast beastType;
         public virtual TypeOfBeast BeastType {
             get
             { 
-                return BeastType;
+                return beastType;
             }
+            set { beastType = value; }
         } //we dont need "set" at all
 
         public int BittenPeople { get; set; }

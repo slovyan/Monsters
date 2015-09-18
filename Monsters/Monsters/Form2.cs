@@ -28,8 +28,7 @@ namespace Monsters
             //comboBox1.Items.Add(new Zombie());
             //comboBox1.Items.Add(new Vampire());
 
-            comboBox1.Items.Add("Zombie");
-            comboBox1.Items.Add("Vampire");
+            comboBox1.DataSource = Enum.GetValues(typeof(TypeOfBeast));
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,6 +53,9 @@ namespace Monsters
             MonstersTable addForm = this.Owner as MonstersTable;
             if (addForm != null)
             {
+                    TypeOfBeast type;
+                    Enum.TryParse<TypeOfBeast>(comboBox1.SelectedValue.ToString(), out type);
+
                 addForm.monstersFamily.Add(new Beast()
                 {
                     Number = number,
@@ -61,10 +63,11 @@ namespace Monsters
                     Speed = speed,
                     CityLocation = textBox6.Text,
                     CountryLocation = textBox4.Text,
-                    BittenPeople = bittenpeople
-
+                    BittenPeople = bittenpeople,
+                    BeastType = type
                 });
             }
+            Close();
             
         }
         
