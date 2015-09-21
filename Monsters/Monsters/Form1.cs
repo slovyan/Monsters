@@ -20,6 +20,7 @@ namespace Monsters
         {
             InitializeComponent();
             monstersFamily = new BindingList<Beast>();
+
         }
 
        private void Form1_Load(object sender, EventArgs e)
@@ -154,6 +155,27 @@ namespace Monsters
             Form2 addItemForm = new Form2();
             addItemForm.Owner = this;
             addItemForm.ShowDialog();
+        }
+
+        private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string column = dataGridView1.Columns[e.ColumnIndex].Name; //Use column name if you set it
+
+            dataGridView1.DataSource = monstersFamily.Select(monsters => new
+                                                            {
+                                                                Number = monsters.Number,
+                                                                Name = monsters.Name,
+                                                                Speed = monsters.Speed,
+                                                                CityLocation = monsters.CityLocation,
+                                                                CountryLocation = monsters.CountryLocation,
+                                                                BittenPeople = monsters.BittenPeople,
+                                                                BeastType = monsters.BeastType,
+                                                                RankType = monsters.RankType
+                                                            })
+
+                                                    .OrderBy(monsters => column)
+
+                                                    .ToList();
         }
         
     }
