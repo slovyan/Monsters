@@ -178,15 +178,15 @@ namespace Monsters
         private void chooseZombie_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = monstersFamily.Where(monsters => monsters.BeastType == TypeOfBeast.Zombie)
-                                                     .Select(monsters => new {  Number = monsters.Number,
-                                                                                Name = monsters.Name,
-                                                                                Speed = monsters.Speed,
-                                                                                CityLocation = monsters.CityLocation,
-                                                                                CountryLocation = monsters.CountryLocation,
-                                                                                BittenPeople = monsters.BittenPeople,
-                                                                                BeastType = monsters.BeastType,
-                                                                                RankType = monsters.RankType
-                                                                                })
+                                                     .ToList();
+        }
+
+        private void strongBeasts_Click(object sender, EventArgs e)
+        {
+            var rand = new Random();
+            dataGridView1.DataSource = monstersFamily.Where(strongMonsters => strongMonsters.BittenPeople > 15)
+                                                     .OrderBy(strongMonsters => rand.Next())
+                                                     .Take(2)
                                                      .ToList();
         }
         
