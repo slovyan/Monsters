@@ -34,6 +34,7 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddItem = new System.Windows.Forms.Button();
+            this.chooseZombie = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -78,12 +79,23 @@
             this.AddItem.UseVisualStyleBackColor = true;
             this.AddItem.Click += new System.EventHandler(this.AddItem_Click);
             // 
+            // chooseZombie
+            // 
+            this.chooseZombie.Location = new System.Drawing.Point(218, 377);
+            this.chooseZombie.Name = "chooseZombie";
+            this.chooseZombie.Size = new System.Drawing.Size(169, 37);
+            this.chooseZombie.TabIndex = 2;
+            this.chooseZombie.Text = "Choose Zombie";
+            this.chooseZombie.UseVisualStyleBackColor = true;
+            this.chooseZombie.Click += new System.EventHandler(this.chooseZombie_Click);
+            // 
             // MonstersTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 450);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.chooseZombie);
             this.Controls.Add(this.AddItem);
             this.Controls.Add(this.dataGridView1);
             this.Name = "MonstersTable";
@@ -102,6 +114,7 @@
         private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.Button AddItem;
+        private System.Windows.Forms.Button chooseZombie;
     }
 }
 
