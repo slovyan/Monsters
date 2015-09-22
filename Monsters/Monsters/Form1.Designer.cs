@@ -36,6 +36,7 @@
             this.AddItem = new System.Windows.Forms.Button();
             this.chooseZombie = new System.Windows.Forms.Button();
             this.strongBeasts = new System.Windows.Forms.Button();
+            this.countListItems = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -100,12 +101,21 @@
             this.strongBeasts.UseVisualStyleBackColor = true;
             this.strongBeasts.Click += new System.EventHandler(this.strongBeasts_Click);
             // 
+            // countListItems
+            // 
+            this.countListItems.Location = new System.Drawing.Point(719, 389);
+            this.countListItems.Name = "countListItems";
+            this.countListItems.Size = new System.Drawing.Size(90, 25);
+            this.countListItems.TabIndex = 4;
+            this.countListItems.Text = "Count items";
+            // 
             // MonstersTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 450);
+            this.ClientSize = new System.Drawing.Size(870, 450);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.countListItems);
             this.Controls.Add(this.strongBeasts);
             this.Controls.Add(this.chooseZombie);
             this.Controls.Add(this.AddItem);
@@ -128,6 +138,7 @@
         private System.Windows.Forms.Button AddItem;
         private System.Windows.Forms.Button chooseZombie;
         private System.Windows.Forms.Button strongBeasts;
+        private System.Windows.Forms.Label countListItems;
     }
 }
 

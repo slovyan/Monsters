@@ -16,11 +16,12 @@ namespace Monsters
         public BindingList<Beast> monstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
 
         Form2 addItemForm = new Form2();
+        
         public MonstersTable()
         {
             InitializeComponent();
             monstersFamily = new BindingList<Beast>();
-
+            monstersFamily.ListChanged += monstersFamily_ListChanged;
         }
 
        private void Form1_Load(object sender, EventArgs e)
@@ -189,6 +190,10 @@ namespace Monsters
                                                      .Take(2)
                                                      .ToList();
         }
-        
+
+        void monstersFamily_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            countListItems.Text = String.Format("{0} items", monstersFamily.Count);
+        }
     }
 }
