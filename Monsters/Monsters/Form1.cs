@@ -127,6 +127,7 @@ namespace Monsters
 
             dataGridView1.DataSource = monstersFamily;
             dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
+            dataGridView1.ColumnHeaderMouseClick += dataGridView1_ColumnHeaderMouseClick;
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -159,23 +160,19 @@ namespace Monsters
 
         private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            string column = dataGridView1.Columns[e.ColumnIndex].Name; //Use column name if you set it
-
-            dataGridView1.DataSource = monstersFamily.Select(monsters => new
-                                                            {
-                                                                Number = monsters.Number,
-                                                                Name = monsters.Name,
-                                                                Speed = monsters.Speed,
-                                                                CityLocation = monsters.CityLocation,
-                                                                CountryLocation = monsters.CountryLocation,
-                                                                BittenPeople = monsters.BittenPeople,
-                                                                BeastType = monsters.BeastType,
-                                                                RankType = monsters.RankType
-                                                            })
-
-                                                    .OrderBy(monsters => column)
-
-                                                    .ToList();
+            if (e.ColumnIndex == 1) 
+            {
+                dataGridView1.DataSource = monstersFamily.OrderBy(monsters => monsters.Name).ToList(); 
+            }
+            else if (e.ColumnIndex == 2)
+            {
+                dataGridView1.DataSource = monstersFamily.OrderBy(monsters => monsters.Speed).ToList();
+            }
+            else if(e.ColumnIndex == 6)
+            {
+                 dataGridView1.DataSource = monstersFamily.OrderBy(monsters => monsters.BittenPeople).ToList();
+            }
+              
         }
         
     }
