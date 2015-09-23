@@ -21,7 +21,6 @@ namespace Monsters
         {
             InitializeComponent();
             monstersFamily = new BindingList<Beast>();
-            monstersFamily.ListChanged += monstersFamily_ListChanged;
         }
 
        private void Form1_Load(object sender, EventArgs e)
@@ -129,6 +128,11 @@ namespace Monsters
             dataGridView1.DataSource = monstersFamily;
             dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
             dataGridView1.ColumnHeaderMouseClick += dataGridView1_ColumnHeaderMouseClick;
+            dataGridView1.AllowUserToAddRows = false;
+            countListItems.Text = dataGridView1.Rows.Count.ToString();
+            dataGridView1.RowsAdded += dataGridView1_RowsAdded;
+            dataGridView1.RowsRemoved += dataGridView1_RowsRemoved;
+            
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -180,6 +184,8 @@ namespace Monsters
         {
             dataGridView1.DataSource = monstersFamily.Where(monsters => monsters.BeastType == TypeOfBeast.Zombie)
                                                      .ToList();
+
+            countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
 
         private void strongBeasts_Click(object sender, EventArgs e)
@@ -189,11 +195,20 @@ namespace Monsters
                                                      .OrderBy(strongMonsters => rand.Next())
                                                      .Take(2)
                                                      .ToList();
+
+            countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
 
-        void monstersFamily_ListChanged(object sender, ListChangedEventArgs e)
+        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
-            countListItems.Text = String.Format("{0} items", monstersFamily.Count);
+            dataGridView1.ClearSelection();
+            countListItems.Text = dataGridView1.Rows.Count.ToString();
+        }
+
+        private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            dataGridView1.ClearSelection();
+            countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
     }
 }
