@@ -205,9 +205,9 @@ namespace Monsters
 
         private void strongBeasts_Click(object sender, EventArgs e)
         {
-            //var rand = new Random();
+            var rand = new Random();
             TableDataSourceList = monstersFamily.Where(strongMonsters => strongMonsters.BittenPeople > 15)
-                                                     .OrderBy(strongMonsters => new Random().Next())
+                                                     .OrderBy(strongMonsters => rand.Next())
                                                      .Take(2)
                                                      .ToList();
 
