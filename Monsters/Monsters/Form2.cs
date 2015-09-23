@@ -56,7 +56,7 @@ namespace Monsters
                     TypeOfBeast type;
                     Enum.TryParse<TypeOfBeast>(comboBox1.SelectedValue.ToString(), out type);
 
-                addForm.monstersFamily.Add(new Beast()
+                addForm.MonstersFamily.Add(new Beast()
                 {
                     Number = number,
                     Name = textBox2.Text,

@@ -13,17 +13,32 @@ namespace Monsters
 {
     public partial class MonstersTable : Form
     {
-        public BindingList<Beast> monstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
+        List<Beast> monstersFamily; //monstersFamily or _monstarsFamily please pay attention. Property, Method, field (_field), CONSTANT, etc...
+        public List<Beast> MonstersFamily { get { return monstersFamily; } set { monstersFamily = value; } }
+
+
+        List<Beast> tableDataSourceList;
+        public List<Beast> TableDataSourceList
+        {
+            get
+            { return tableDataSourceList; }
+            set
+            {
+                tableDataSourceList = value;
+                dataGridView1.DataSource = value;
+                countListItems.Text = tableDataSourceList.Count.ToString();
+            }
+        }
 
         Form2 addItemForm = new Form2();
-        
+
         public MonstersTable()
         {
             InitializeComponent();
-            monstersFamily = new BindingList<Beast>();
+            monstersFamily = new List<Beast>();
         }
 
-       private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
             monstersFamily.Add(new Zombie()
             {
@@ -132,7 +147,7 @@ namespace Monsters
             countListItems.Text = dataGridView1.Rows.Count.ToString();
             dataGridView1.RowsAdded += dataGridView1_RowsAdded;
             dataGridView1.RowsRemoved += dataGridView1_RowsRemoved;
-            
+
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -143,7 +158,7 @@ namespace Monsters
             }
 
         }
-                             
+
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView1.ReadOnly = false;
@@ -155,7 +170,7 @@ namespace Monsters
             dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
         }
 
-        
+
         private void AddItem_Click(object sender, EventArgs e)
         {
             Form2 addItemForm = new Form2();
@@ -165,50 +180,50 @@ namespace Monsters
 
         private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            if (e.ColumnIndex == 1) 
+            if (e.ColumnIndex == 1)
             {
-                dataGridView1.DataSource = monstersFamily.OrderBy(monsters => monsters.Name).ToList(); 
+                TableDataSourceList = monstersFamily.OrderBy(monsters => monsters.Name).ToList();
             }
             else if (e.ColumnIndex == 2)
             {
-                dataGridView1.DataSource = monstersFamily.OrderBy(monsters => monsters.Speed).ToList();
+                TableDataSourceList = monstersFamily.OrderBy(monsters => monsters.Speed).ToList();
             }
-            else if(e.ColumnIndex == 6)
+            else if (e.ColumnIndex == 6)
             {
-                 dataGridView1.DataSource = monstersFamily.OrderBy(monsters => monsters.BittenPeople).ToList();
+                TableDataSourceList = monstersFamily.OrderBy(monsters => monsters.BittenPeople).ToList();
             }
-              
+
         }
 
         private void chooseZombie_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = monstersFamily.Where(monsters => monsters.BeastType == TypeOfBeast.Zombie)
+            TableDataSourceList = monstersFamily.Where(monsters => monsters.BeastType == TypeOfBeast.Zombie)
                                                      .ToList();
 
-            countListItems.Text = dataGridView1.Rows.Count.ToString();
+           // countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
 
         private void strongBeasts_Click(object sender, EventArgs e)
         {
-            var rand = new Random();
-            dataGridView1.DataSource = monstersFamily.Where(strongMonsters => strongMonsters.BittenPeople > 15)
-                                                     .OrderBy(strongMonsters => rand.Next())
+            //var rand = new Random();
+            TableDataSourceList = monstersFamily.Where(strongMonsters => strongMonsters.BittenPeople > 15)
+                                                     .OrderBy(strongMonsters => new Random().Next())
                                                      .Take(2)
                                                      .ToList();
 
-            countListItems.Text = dataGridView1.Rows.Count.ToString();
+            //countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
 
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             dataGridView1.ClearSelection();
-            countListItems.Text = dataGridView1.Rows.Count.ToString();
+           // countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
 
         private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             dataGridView1.ClearSelection();
-            countListItems.Text = dataGridView1.Rows.Count.ToString();
+           // countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
     }
 }
