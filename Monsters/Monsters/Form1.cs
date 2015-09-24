@@ -17,11 +17,13 @@ namespace Monsters
         public List<Beast> MonstersFamily { get { return monstersFamily; } set { monstersFamily = value; } }
 
 
-        List<Beast> tableDataSourceList;
-        public List<Beast> TableDataSourceList
+        BindingList<Beast> tableDataSourceList;
+        public BindingList<Beast> TableDataSourceList
         {
             get
-            { return tableDataSourceList; }
+            {
+                return tableDataSourceList;
+            }
             set
             {
                 tableDataSourceList = value;
@@ -140,7 +142,8 @@ namespace Monsters
                 BittenPeople = 2
             });
 
-            dataGridView1.DataSource = monstersFamily;
+            TableDataSourceList = new BindingList<Beast>(monstersFamily);
+            dataGridView1.DataSource = TableDataSourceList;
             dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
             dataGridView1.ColumnHeaderMouseClick += dataGridView1_ColumnHeaderMouseClick;
             dataGridView1.AllowUserToAddRows = false;
@@ -156,7 +159,6 @@ namespace Monsters
             {
                 dataGridView1.ReadOnly = true;
             }
-
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -167,7 +169,7 @@ namespace Monsters
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Remove(dataGridView1.CurrentRow);
+            TableDataSourceList.RemoveAt(dataGridView1.CurrentRow.Index);
         }
 
 
@@ -182,23 +184,23 @@ namespace Monsters
         {
             if (e.ColumnIndex == 1)
             {
-                TableDataSourceList = monstersFamily.OrderBy(monsters => monsters.Name).ToList();
+                TableDataSourceList = new BindingList<Beast>(monstersFamily.OrderBy(monsters => monsters.Name).ToList());
             }
             else if (e.ColumnIndex == 2)
             {
-                TableDataSourceList = monstersFamily.OrderBy(monsters => monsters.Speed).ToList();
+                TableDataSourceList = new BindingList<Beast>(monstersFamily.OrderBy(monsters => monsters.Speed).ToList());
             }
             else if (e.ColumnIndex == 6)
             {
-                TableDataSourceList = monstersFamily.OrderBy(monsters => monsters.BittenPeople).ToList();
+                TableDataSourceList = new BindingList<Beast>(monstersFamily.OrderBy(monsters => monsters.BittenPeople).ToList());
             }
 
         }
 
         private void chooseZombie_Click(object sender, EventArgs e)
         {
-            TableDataSourceList = monstersFamily.Where(monsters => monsters.BeastType == TypeOfBeast.Zombie)
-                                                     .ToList();
+            TableDataSourceList = new BindingList<Beast>(monstersFamily.Where(monsters => monsters.BeastType == TypeOfBeast.Zombie)
+                                                     .ToList());
 
            // countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
@@ -206,10 +208,10 @@ namespace Monsters
         private void strongBeasts_Click(object sender, EventArgs e)
         {
             var rand = new Random();
-            TableDataSourceList = monstersFamily.Where(strongMonsters => strongMonsters.BittenPeople > 15)
+            TableDataSourceList = new BindingList<Beast>(monstersFamily.Where(strongMonsters => strongMonsters.BittenPeople > 15)
                                                      .OrderBy(strongMonsters => rand.Next())
                                                      .Take(2)
-                                                     .ToList();
+                                                     .ToList());
 
             //countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
