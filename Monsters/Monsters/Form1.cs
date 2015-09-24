@@ -143,6 +143,7 @@ namespace Monsters
             });
 
             TableDataSourceList = new BindingList<Beast>(monstersFamily);
+            TableDataSourceList.ListChanged += TableDataSourceList_ListChanged;
             dataGridView1.DataSource = TableDataSourceList;
             dataGridView1.CellMouseClick += dataGridView1_CellMouseClick;
             dataGridView1.ColumnHeaderMouseClick += dataGridView1_ColumnHeaderMouseClick;
@@ -178,6 +179,7 @@ namespace Monsters
             Form2 addItemForm = new Form2();
             addItemForm.Owner = this;
             addItemForm.ShowDialog();
+            
         }
 
         private void dataGridView1_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -226,6 +228,10 @@ namespace Monsters
         {
             dataGridView1.ClearSelection();
            // countListItems.Text = dataGridView1.Rows.Count.ToString();
+        }
+        private void TableDataSourceList_ListChanged(object sender, ListChangedEventArgs e)
+        {
+            countListItems.Text = tableDataSourceList.Count.ToString();
         }
     }
 }
