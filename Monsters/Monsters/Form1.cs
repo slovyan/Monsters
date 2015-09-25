@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Monsters.Helpers;
 using Monsters.Models;
+using Monsters.Extensions;
 
 namespace Monsters
 {

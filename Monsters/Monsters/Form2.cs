@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Monsters.Models;
+using Monsters.Extensions;
 
 
 namespace Monsters
