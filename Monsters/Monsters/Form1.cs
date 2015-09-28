@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Monsters.Helpers;
 using Monsters.Models;
 
 namespace Monsters
@@ -186,7 +187,7 @@ namespace Monsters
         {
             if (e.ColumnIndex == 1)
             {
-                TableDataSourceList = new BindingList<Beast>(monstersFamily.OrderBy(monsters => monsters.Name).ToList());
+                TableDataSourceList =monstersFamily.OrderBy(monsters => monsters.Name).ToBindingList();
             }
             else if (e.ColumnIndex == 2)
             {
