@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Monsters.Helpers;
 using Monsters.Models;
-using Monsters.Extensions;
 
 namespace Monsters
 {
@@ -188,23 +187,22 @@ namespace Monsters
         {
             if (e.ColumnIndex == 1)
             {
-                TableDataSourceList =monstersFamily.OrderBy(monsters => monsters.Name).ToBindingList();
+                TableDataSourceList = monstersFamily.OrderBy(monsters => monsters.Name).ToBindingList();
             }
             else if (e.ColumnIndex == 2)
             {
-                TableDataSourceList = new BindingList<Beast>(monstersFamily.OrderBy(monsters => monsters.Speed).ToList());
+                TableDataSourceList = monstersFamily.OrderBy(monsters => monsters.Speed).ToBindingList();
             }
             else if (e.ColumnIndex == 6)
             {
-                TableDataSourceList = new BindingList<Beast>(monstersFamily.OrderBy(monsters => monsters.BittenPeople).ToList());
+                TableDataSourceList = monstersFamily.OrderBy(monsters => monsters.BittenPeople).ToBindingList();
             }
 
         }
 
         private void chooseZombie_Click(object sender, EventArgs e)
         {
-            TableDataSourceList = new BindingList<Beast>(monstersFamily.Where(monsters => monsters.BeastType == TypeOfBeast.Zombie)
-                                                     .ToList());
+            TableDataSourceList = monstersFamily.Where(monsters => monsters.BeastType == TypeOfBeast.Zombie).ToBindingList();
 
            // countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
@@ -212,10 +210,10 @@ namespace Monsters
         private void strongBeasts_Click(object sender, EventArgs e)
         {
             var rand = new Random();
-            TableDataSourceList = new BindingList<Beast>(monstersFamily.Where(strongMonsters => strongMonsters.BittenPeople > 15)
+            TableDataSourceList = monstersFamily.Where(strongMonsters => strongMonsters.BittenPeople > 15)
                                                      .OrderBy(strongMonsters => rand.Next())
                                                      .Take(2)
-                                                     .ToList());
+                                                     .ToBindingList();
 
             //countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
@@ -229,7 +227,7 @@ namespace Monsters
         private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             dataGridView1.ClearSelection();
-           // countListItems.Text = dataGridView1.Rows.Count.ToString();
+            countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
         private void TableDataSourceList_ListChanged(object sender, ListChangedEventArgs e)
         {
