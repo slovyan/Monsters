@@ -221,7 +221,7 @@ namespace Monsters
         private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
             dataGridView1.ClearSelection();
-           // countListItems.Text = dataGridView1.Rows.Count.ToString();
+            countListItems.Text = dataGridView1.Rows.Count.ToString();
         }
 
         private void dataGridView1_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
