@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Monsters.Helpers;
 using Monsters.Models;
+using System.Xml;
+using System.Xml.Linq;
 
 namespace Monsters
 {
@@ -43,105 +45,34 @@ namespace Monsters
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            monstersFamily.Add(new Zombie()
-            {
-                Number = 1,
-                Name = "Atomic",
-                Speed = 100,
-                CityLocation = "Kiev",
-                CountryLocation = "Ukraine",
-                BittenPeople = 0
-            });
+            var beasts = from c in XElement.Load("DataBeastsProject.xml").Elements("Beast")
+                        select c;
+            
 
-            monstersFamily.Add(new Zombie()
+            foreach (var item in beasts)
             {
-                Number = 2,
-                Name = "King",
-                Speed = 120,
-                CityLocation = "London",
-                CountryLocation = "England",
-                BittenPeople = 55
-            });
+                int number = 0;
+                Int32.TryParse(item.Element("Number").Value, out number);
 
-            monstersFamily.Add(new Zombie()
-            {
-                Number = 3,
-                Name = "Shadow",
-                Speed = 80,
-                CityLocation = "Tokio",
-                CountryLocation = "Japan",
-                BittenPeople = 12
-            });
+                double speed = 0;
+                Double.TryParse(item.Element("Speed").Value, out speed);
 
-            monstersFamily.Add(new Zombie()
-            {
-                Number = 4,
-                Name = "Giant",
-                Speed = 150,
-                CityLocation = "Sydney ",
-                CountryLocation = "Australia",
-                BittenPeople = 80
-            });
+                int bittenpeople = 0;
+                Int32.TryParse(item.Element("BittenPeople").Value, out bittenpeople);
 
-            monstersFamily.Add(new Zombie()
-            {
-                Number = 5,
-                Name = "Master",
-                Speed = 200,
-                CityLocation = "NewYork",
-                CountryLocation = "USA",
-                BittenPeople = 20
-            });
+                TypeOfBeast type;
+                Enum.TryParse<TypeOfBeast>(item.Element("BeastType").Value, out type);
 
-            monstersFamily.Add(new Vampire()
-            {
-                Number = 6,
-                Name = "Demon",
-                Speed = 300,
-                CityLocation = "Moscow",
-                CountryLocation = "Russia",
-                BittenPeople = 10
-            });
-
-            monstersFamily.Add(new Vampire()
-            {
-                Number = 7,
-                Name = "Harlot",
-                Speed = 420,
-                CityLocation = "CapeTown",
-                CountryLocation = "Africa",
-                BittenPeople = 0
-            });
-
-            monstersFamily.Add(new Vampire()
-            {
-                Number = 8,
-                Name = "Concubine",
-                Speed = 280,
-                CityLocation = "BuenosAires",
-                CountryLocation = "Argentina",
-                BittenPeople = 38
-            });
-
-            monstersFamily.Add(new Vampire()
-            {
-                Number = 9,
-                Name = "Tramp",
-                Speed = 550,
-                CityLocation = "Pekin",
-                CountryLocation = "China",
-                BittenPeople = 95
-            });
-
-            monstersFamily.Add(new Vampire()
-            {
-                Number = 10,
-                Name = "Vixen",
-                Speed = 600,
-                CityLocation = "Habana",
-                CountryLocation = "Cuba",
-                BittenPeople = 2
-            });
+                monstersFamily.Add(new Beast()
+                {
+                    Number = number,
+                    Name = item.Element("Name").Value,
+                    Speed = speed,
+                    CountryLocation = item.Element("CountryLocation").Value,
+                    CityLocation = item.Element("CityLocation").Value,
+                    BeastType = type,
+                    BittenPeople = bittenpeople});
+            };
 
             TableDataSourceList = new BindingList<Beast>(monstersFamily);
             TableDataSourceList.ListChanged += TableDataSourceList_ListChanged;
