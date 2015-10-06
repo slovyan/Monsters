@@ -102,7 +102,16 @@ namespace Monsters
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TableDataSourceList.RemoveAt(dataGridView1.CurrentRow.Index);
+            TableDataSourceList.RemoveAt(dataGridView1.CurrentRow.Index);            
+
+            Beast listItem =  TableDataSourceList.ElementAt(dataGridView1.CurrentRow.Index);
+
+            //.........
+
+            XDocument xDoc = XDocument.Load("DataBeastsProject.xml");
+            XElement child = xDoc.Element(" ");
+            child.Remove();
+
         }
 
 
