@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Monsters.Models;
 using System.Xml;
 using System.Xml.Linq;
+using System.IO;
 
 
 namespace Monsters
@@ -70,24 +71,23 @@ namespace Monsters
                     BeastType = type
                 });  
             }
-
+            Close();
 
             XDocument xDoc = XDocument.Load("DataBeastsProject.xml");
 
             XElement elem = new XElement("Beast",
                                                 new XElement("Number", textBox1.Text),
                                                 new XElement("Name", textBox2.Text),
-                                                new XElement("Speed", (textBox3.Text),
+                                                new XElement("Speed", textBox3.Text),
                                                 new XElement("CountryLocation", textBox4.Text),
                                                 new XElement("CityLocation", textBox6.Text),
                                                 new XElement("BeastType", comboBox1.SelectedValue),
                                                 new XElement("BittenPeople", textBox7.Text)
-                                                ));
+                                                );
 
             xDoc.Element("MonstersFamily").Add(elem);
-            xDoc.Save("DataBeastsProject.xml");
-
-            Close();
+            xDoc.Save(@"..\..\DataBeastsProject.xml");
+            
         }
         
     }

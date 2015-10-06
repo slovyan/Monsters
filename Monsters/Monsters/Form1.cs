@@ -11,6 +11,7 @@ using Monsters.Helpers;
 using Monsters.Models;
 using System.Xml;
 using System.Xml.Linq;
+using System.IO;
 
 namespace Monsters
 {
@@ -82,8 +83,7 @@ namespace Monsters
             dataGridView1.AllowUserToAddRows = false;
             countListItems.Text = dataGridView1.Rows.Count.ToString();
             dataGridView1.RowsAdded += dataGridView1_RowsAdded;
-            dataGridView1.RowsRemoved += dataGridView1_RowsRemoved;
-
+            dataGridView1.RowsRemoved += dataGridView1_RowsRemoved;            
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
