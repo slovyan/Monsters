@@ -90,4 +90,13 @@
     <BeastType>Vampire</BeastType>
     <BittenPeople>2</BittenPeople>
   </Beast>
+  <Beast>
+    <Number>11</Number>
+    <Name>hjm</Name>
+    <Speed>452</Speed>
+    <CountryLocation>hjm</CountryLocation>
+    <CityLocation>hjm</CityLocation>
+    <BeastType>Zombie</BeastType>
+    <BittenPeople>452</BittenPeople>
+  </Beast>
 </MonstersFamily>
