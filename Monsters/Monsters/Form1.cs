@@ -103,15 +103,21 @@ namespace Monsters
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             TableDataSourceList.RemoveAt(dataGridView1.CurrentRow.Index);
-
             XDocument xDoc = XDocument.Load("DataBeastsProject.xml");
 
             Beast listItem = TableDataSourceList.ElementAt(dataGridView1.CurrentRow.Index);
 
             string numberList = listItem.Number.ToString();
 
-            xDoc.Descendants("Number").Where(q => q.Value == numberList).Single().Parent.PreviousNode.Remove();
-            
+            if (dataGridView1.CurrentRow.Index == dataGridView1.Rows.Count - 1)
+            {
+                xDoc.Descendants("Number").Last().Parent.Remove();
+            }
+            else
+            {
+                xDoc.Descendants("Number").Where(q => q.Value == numberList).Single().Parent.PreviousNode.Remove();
+            }
+
             xDoc.Save(@"..\..\DataBeastsProject.xml");
 
         }
